@@ -6,8 +6,8 @@ from typing import List, Dict
 class SyntheticPanelDataGenerator:
     def __init__(self):
         self.g7_countries = ['Canada', 'France', 'Germany', 'Italy', 'Japan', 'United Kingdom', 'United States']
-        self.start_year = 1970
-        self.end_year = 2020
+        self.start_year = 1950
+        self.end_year = 2030
 
     @staticmethod
     @st.cache_data
