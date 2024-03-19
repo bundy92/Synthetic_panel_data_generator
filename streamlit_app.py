@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import io
-import base64
 from typing import List, Dict
 
 class SyntheticPanelDataGenerator:
@@ -22,7 +20,7 @@ class SyntheticPanelDataGenerator:
         - df (pd.DataFrame): DataFrame to convert.
 
         Returns:
-        - bytes: Encoded CSV data.
+        - bytes: CSV data.
         """
         # Input validation
         if not isinstance(df, pd.DataFrame):
@@ -35,11 +33,7 @@ class SyntheticPanelDataGenerator:
             # Error handling
             raise RuntimeError(f"Error occurred while converting DataFrame to CSV: {str(e)}")
 
-        # Cybersecurity: Secure encoding
-        # Encoding data using Base64 for enhanced security
-        encoded_data = base64.b64encode(csv_data)
-
-        return encoded_data
+        return csv_data
 
     @staticmethod
     def simulate_synthetic_data(g7_countries: List[str], start_year: int, end_year: int, feature_settings: Dict[str, Dict[str, float]]) -> pd.DataFrame:
